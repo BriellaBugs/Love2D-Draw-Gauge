@@ -50,6 +50,9 @@ function Gauge:new(updateFunction, x, y, radius, valueLimits, loopLimits, major,
 	if options.gradient == nil then
 		options.gradient = {color1 = {0.2,0.2,0.2,1}, color2 = {0,0,0,0}}
 	end
+	if options.stickTint == nil then
+		options.stickTint = {0.7,0,0}
+	end
 	
 	limits = limits or {}
 	for i,limit in ipairs(limits) do
@@ -133,9 +136,7 @@ local function drawDonutArc(drawMode, x, y, innerR, outerR, angle1, angle2, segm
 		love.graphics.polygon(drawMode,
 			x1_outer, y1_outer,
 			x2_outer, y2_outer,
-			x2_inner, y2_inner
-		)
-		love.graphics.polygon(drawMode,
+			x2_inner, y2_inner,
 			x2_inner, y2_inner,
 			x1_inner, y1_inner,
 			x1_outer, y1_outer
@@ -177,7 +178,7 @@ end
 
 function Gauge:createGradient()
 	local gradient = love.graphics.newCanvas(self.radius*2,self.radius*2)
-	local increment = math.rad(1/(self.radius*0.1))
+	local increment = math.rad(1/(self.radius*0.25))
 	local gradientResolution = self.radius
 	
 	local palette = createPalette({self.options.gradient.color1,self.options.gradient.color2},gradientResolution)
@@ -315,6 +316,7 @@ function Gauge:draw()
 	
 	love.graphics.setColor(1,1,1,1)
 	if self.value then
+		love.graphics.setColor(self.options.stickTint)
 		love.graphics.draw(gaugeImages["gauge"],0,0,lerp(self.loopLimits[1],self.loopLimits[2],normalValue),self.radius*1.9/imgW,self.radius*1.9/imgW,imgW/2,imgH/2)
 	end
 
