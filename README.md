@@ -1,7 +1,7 @@
 # Love2D-Draw-Gauge
 Car Gauge style module for Love2D
 
-<img width="602" height="332" alt="image" src="https://github.com/user-attachments/assets/7a730b59-190e-4c03-99ed-000eac1d1a76" />
+<img width="602" height="332" alt="image" src="https://github.com/user-attachments/assets/8d5b2ff8-1690-431b-bd21-29684e2316a7" />
 
 Example gauge cluster (Gear Display not included)
 <details>
