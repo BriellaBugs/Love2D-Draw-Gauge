@@ -164,9 +164,9 @@ end
 
 local function createPalette(colors, resolution)
 	local palette = {}
-	for i=1, #colors-1 do
-		local color1 = colors[i]
-		local color2 = colors[i+1]
+	for j=1, #colors-1 do
+		local color1 = colors[j]
+		local color2 = colors[j+1]
 		for i=1, resolution/(#colors-1) do
 			table.insert(palette, lerpColor(
 				color1, color2,
@@ -324,4 +324,3 @@ function Gauge:draw()
 end
 
 return Gauge
-
