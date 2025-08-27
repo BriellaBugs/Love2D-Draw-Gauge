@@ -6,7 +6,7 @@ local gaugeFonts =     setmetatable({}, { __mode = "kv" }) -- weak keys/values, 
 local gaugeGradients = setmetatable({}, { __mode = "" }) -- {color1 = {r,g,b[,a]}, color2 = {r,g,b[,a]}}
 -- gaugeGradients[r..g..b..a..r..g..b..a..radius..startLoop..endLoop] = gradientCanvas
 
-gaugeImages["gauge"] = love.graphics.newImage("gauge/img/gauge.png")
+gaugeImages["gauge"] = love.graphics.newImage("gauge/img/gauge-highres.png")
 
 function Gauge:new(updateFunction, x, y, radius, valueLimits, loopLimits, major, minor, factor, limits, options)
 	if type(updateFunction) ~= "function" then error("Invalid update function") end
@@ -324,3 +324,4 @@ function Gauge:draw()
 end
 
 return Gauge
+
