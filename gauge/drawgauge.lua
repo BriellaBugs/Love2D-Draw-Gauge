@@ -1,3 +1,8 @@
+--[[
+	Car style digital gauge cluster module for Love2D
+	How to use: https://github.com/BriellaBugs/Love2D-Draw-Gauge/
+--]]
+
 local Gauge = {}
 Gauge.__index = Gauge
 
@@ -324,3 +329,4 @@ function Gauge:draw()
 end
 
 return Gauge
+
