@@ -1,4 +1,5 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+
 Car Gauge style module for Love2D
 
 <img width="602" height="332" alt="image" src="https://github.com/user-attachments/assets/8d5b2ff8-1690-431b-bd21-29684e2316a7" />
