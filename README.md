@@ -64,7 +64,7 @@ end
 
 It is called every time Gauge:update(dt) is called
 
-you can use gauge.value inside the function to update it's current value
+While the module is dynamic allowing you to edit any of the values at any time, most times you only need to edit gauge.value
 
 For Example:
 ```lua
