@@ -142,8 +142,11 @@ options = {
 }
 ```
 
-# License
+## Limitations and Issues
+Changing `radius`, `loopLimits`, or `options.gradient` at runtime forces the gauge to regenerate its gradient canvas. This is an expensive operation and should not be done every frame, as it may cause performance issues.  
+See [love.graphics.newCanvas](https://love2d.org/wiki/love.graphics.newCanvas) for more details.
 
+# License
 This project is licensed under the MIT License — see the [LICENSE](LICENSE) file for details.
 
 ## Real world use
