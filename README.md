@@ -1,5 +1,4 @@
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE) [![Made by a queer person](https://img.shields.io/badge/Made_by-a_queer_person-purple.svg)](https://media.tenor.com/j429UfT683IAAAAM/waving-pride-flag-pride-flag.gif)
-# Love2D-Draw-Gauge
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 Car Gauge style module for Love2D
 
 <img width="602" height="332" alt="image" src="https://github.com/user-attachments/assets/8d5b2ff8-1690-431b-bd21-29684e2316a7" />
