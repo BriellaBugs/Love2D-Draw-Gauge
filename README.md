@@ -145,3 +145,6 @@ options = {
 # License
 
 This project is licensed under the MIT License — see the [LICENSE](LICENSE) file for details.
+
+## Real world use
+While I haven't tried it (yet), you could implement this in a real car dashboard if you really wanted to
