@@ -137,7 +137,7 @@ Other settings to change to your liking, current options are
 ```lua
 options = {
   allowOverflow = false -- Whether the gauge can leave the loopLimits boundaries
-  gradient = {color1 = {0.2,0.2,0.2,1}, color2 = {0,0,0,0}} -- Gradient colors inside the gauge
+  gradient = {color1 = {0.2,0.2,0.2,1}, color2 = {0,0,0,0}} -- Gradient colors inside the gauge, gray by default
   stickTint = {0.7,0,0,1} -- Color of the gauge stick, red by default
 }
 ```
