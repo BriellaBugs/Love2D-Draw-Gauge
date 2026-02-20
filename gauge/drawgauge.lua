@@ -24,6 +24,7 @@ function Gauge:new(updateFunction, x, y, radius, valueLimits, loopLimits, major,
 	if type(radius) ~= "number" then error("Invalid radius value type: "..type(radius)) end
 	
 	if type(valueLimits) == "table" then
+		if #valueLimits ~= 2 then error("valueLimits must be a table with exactly 2 numbers") end
 		for i=1,2 do
 			local v = valueLimits[i]
 			if type(v) ~= "number" then error("Invalid value limits component #"..tostring(i).." type, got "..type(valueLimits[i])) end
@@ -33,6 +34,7 @@ function Gauge:new(updateFunction, x, y, radius, valueLimits, loopLimits, major,
 	end
 	
 	if type(loopLimits) == "table" then
+		if #loopLimits ~= 2 then error("loopLimits must be a table with exactly 2 numbers") end
 		for i=1,2 do
 			local v = loopLimits[i]
 			if type(v) ~= "number" then error("Invalid loop limits component #"..tostring(i).." type, got "..type(v)) end
@@ -329,5 +331,6 @@ function Gauge:draw()
 end
 
 return Gauge
+
 
 
