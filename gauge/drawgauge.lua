@@ -98,8 +98,8 @@ function Gauge:new(updateFunction, x, y, radius, valueLimits, loopLimits, major,
 		options = options
 	}
 	
-	setmetatable(self, {__index = Gauge}) -- important fix
-	return self -- return the instance, not the class
+	setmetatable(self, {__index = Gauge})
+	return self
 end
 
 local function lerp(a,b,t)
@@ -116,6 +116,9 @@ local function lerpColor(a,b,t)
 end
 
 local function drawDonutArc(drawMode, x, y, innerR, outerR, angle1, angle2, segments)
+	-- WARNING 19/02/2026: Revisiting this I have no idea how it works, probably copy-pasted from somewhere
+	--                     At Least It's Not AI™
+	
 	local sin, cos = math.sin, math.cos
 	angle2 = angle1 + math.max(-math.pi*2, math.min(angle2 - angle1, math.pi*2))
 	segments = segments or 64
@@ -139,7 +142,6 @@ local function drawDonutArc(drawMode, x, y, innerR, outerR, angle1, angle2, segm
 		local x2_inner = x + a2cos * innerR
 		local y2_inner = y + a2sin * innerR
 
-		-- Draw two triangles forming a quad slice
 		love.graphics.polygon(drawMode,
 			x1_outer, y1_outer,
 			x2_outer, y2_outer,
@@ -251,7 +253,6 @@ function Gauge:draw()
 	end
 	love.graphics.setFont(font)
 	
-	--r..g..b..a..r..g..b..a..radius..startLoop..endLoop
 	local gradient
 	if self.options.gradient then
 		local color1 = self.options.gradient.color1
@@ -260,7 +261,7 @@ function Gauge:draw()
 		gradient = gaugeGradients[gradkey]
 		if not gaugeGradients[gradkey] then
 			gradient = self:createGradient()
-			-- print("Created unexistent gradient: "..gradkey)
+			-- DEBUG: print("Created unexistent gradient: "..gradkey)
 			gaugeGradients[gradkey] = gradient
 		end
 	end
@@ -331,6 +332,7 @@ function Gauge:draw()
 end
 
 return Gauge
+
 
 
 
