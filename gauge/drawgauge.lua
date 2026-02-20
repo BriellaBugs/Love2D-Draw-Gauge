@@ -18,7 +18,7 @@ function Gauge:new(updateFunction, x, y, radius, valueLimits, loopLimits, major,
 	
 	if not x then error("Missing x value") end
 	if not y then error("Missing y value") end
-	if not radius then error("Missing y radius") end
+	if not radius then error("Missing radius value") end
 	if type(x) ~= "number" then error("Invalid x value type: "..type(x)) end
 	if type(y) ~= "number" then error("Invalid y value type: "..type(y)) end
 	if type(radius) ~= "number" then error("Invalid radius value type: "..type(radius)) end
@@ -329,4 +329,5 @@ function Gauge:draw()
 end
 
 return Gauge
+
 
